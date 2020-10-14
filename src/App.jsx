@@ -1,10 +1,9 @@
-import Main from './Main';
-import React from 'react'
-;
+import Main from "./Main";
+import React from "react";
 
 function App() {
   return (
-    <div className="App">
+    <div style={{height: '100vh'}}>
       <Main />
     </div>
   );
