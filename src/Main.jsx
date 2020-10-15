@@ -1,8 +1,10 @@
 import { Route, Switch } from "react-router-dom";
 
+import About from './views/About';
 import AppBar from "./components/AppBar";
-import Home from "./components/Home";
+import Home from "./views/Home";
 import React from "react";
+import Resources from "./views/Resources";
 import { makeStyles } from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -26,12 +28,11 @@ const Main = () => {
         <Switch>
           <div className={classes.mainContentContainer}>
             <Route path="/" component={Home} exact />
+            <Route path="/Resources" component={Resources} />
+            <Route path="/About" component={About} />
           </div>
         </Switch>
       </div>
-      {/* <Route path="/about" component={About} />
-                <Route path="/shop" component={Shop} />
-                <Route component={Error} /> */}
     </div>
   );
 };

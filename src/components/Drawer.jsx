@@ -1,6 +1,7 @@
 import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
+import {Link} from 'react-router-dom'
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -9,7 +10,6 @@ import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import clsx from "clsx";
 import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -43,13 +43,15 @@ export default function SwipeableTemporaryDrawer() {
     <div>
       <div style={{ marginTop: "50px" }}>
         <List>
-          {["Home", "About", "Resources"].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
+          {[ "About", "Resources"].map((text, index) => (
+            <Link to={`/${text}`}>
+              <ListItem  key={text}>
+                <ListItemIcon>
+                  {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                </ListItemIcon>
+                <ListItemText primary={text} />
+              </ListItem>
+            </Link>
           ))}
         </List>
       </div>
@@ -59,7 +61,7 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <>
       <IconButton onClick={toggleDrawer("left", true)}>
-        <MenuIcon />
+        <MenuIcon style={{color:'white'}}/>
       </IconButton>
       <SwipeableDrawer
         anchor={"left"}

@@ -24,8 +24,7 @@ const AppBarComponent = () => {
   return (
     <AppBar
       position="static"
-      color=''
-      style={{ display: "flex", justifyContent: "flex-end" }}
+      style={{ backgroundColor:'black', display: "flex", justifyContent: "flex-end"}}
     >
       <Toolbar>
         <Drawer />
