@@ -4,10 +4,6 @@ import GirlsWhoCode from "../assets/images/girlswhocode.png";
 import React from "react";
 
 const useStyles = makeStyles({
-  homeContainer: {
-    // display: "flex",
-    // justifyContent: "center",
-  },
   imageContainer: {
     alignSelf: "center",
     height: "500px",

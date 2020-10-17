@@ -1,5 +1,5 @@
 import React from "react";
-import {Link, Paper} from "@material-ui/core";
+import {Paper} from "@material-ui/core";
 import axios from "axios";
 
 const Example = () => {
@@ -9,6 +9,7 @@ const Example = () => {
 // example of an api call using axios this was npm installed 
 // taken from https://www.programmableweb.com/category/humor/api
   React.useEffect(() => {
+    let mounted = true; 
     const fetchFriendsData = async () => {
       try {
         const quotes = await axios.get("https://friends-quotes-api.herokuapp.com/quotes");
@@ -17,12 +18,22 @@ const Example = () => {
         console.log("error", error);
       }
     }; 
-    fetchFriendsData();
+    if(mounted){
+      fetchFriendsData();
+    }
+    return () => mounted = false; 
   }, [data]);
+
+  if(!data.length){
+    return(
+      <div> Loading .... </div>
+    )
+  }
 
   return (
     <Paper>
       <div> Api Call Example</div>
+      <p> Taken from Friends,  `https://www.programmableweb.com/category/humor/api` </p>
       {data.map((item, index) => {
         return (
           <div key={index}>

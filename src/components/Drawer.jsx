@@ -9,19 +9,9 @@ import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import {makeStyles} from "@material-ui/core/styles";
 
-const useStyles = makeStyles({
-  list: {
-    width: 250
-  },
-  fullList: {
-    width: "auto"
-  }
-});
 
 const SwipeableTemporaryDrawer = () => {
-  const classes = useStyles();
   const [state, setState] = React.useState({
     left: false
   });

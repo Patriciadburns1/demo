@@ -32,7 +32,7 @@ const AppBarComponent = () => {
         <Typography variant="h6" className={classes.title}>
           Girls Who Code
         </Typography>
-        <Link to='/'> <HomeIcon/> </Link> 
+        <Link redirect to='/'> <HomeIcon/> </Link> 
         <a href='https://github.com/' rel="noopener noreferrer" target="_blank"> 
         <GitHubIcon/> 
         </a>
