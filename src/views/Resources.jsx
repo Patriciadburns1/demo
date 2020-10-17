@@ -31,7 +31,6 @@ const Resources = () => {
       <div>
         <a
           href="https://codesandbox.io/"
-          absolute-center
           target="_blank"
           rel="noopener noreferrer"
         >
