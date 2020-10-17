@@ -5,7 +5,7 @@ import Example from './views/ApiCall';
 import AppBar from "./components/AppBar";
 import Home from "./views/Home";
 import React from "react";
-import Resources from "./views/ApiCall";
+import Resources from "./views/Resources";
 import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles({
@@ -32,6 +32,7 @@ const Main = () => {
             <Route path="/" component={Home} exact />
             <Route path="/Example" component={Example} />
             <Route path="/About" component={About} />
+            <Route path="/Resources" component={Resources} />
           </Switch>
         </div>
       </div>

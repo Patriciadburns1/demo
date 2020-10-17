@@ -42,7 +42,7 @@ const SwipeableTemporaryDrawer = () => {
     <div>
       <div style={{marginTop: "50px"}}>
         <List>
-          {["About", "Example"].map((text, index) => (
+          {["About", "Example", "Resources"].map((text, index) => (
             <Link to={`/${text}`} key={text}>
               <ListItem>
                 <ListItemIcon>

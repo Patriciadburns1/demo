@@ -1,10 +1,10 @@
 import AppBar from "@material-ui/core/AppBar";
 import Drawer from "./Drawer";
 import React from "react";
-import Toolbar from "@material-ui/core/Toolbar";
-import Typography from "@material-ui/core/Typography";
+import {Link,Toolbar, Typography} from "@material-ui/core";
 import {makeStyles} from "@material-ui/core/styles";
 import GitHubIcon from '@material-ui/icons/GitHub';
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -32,6 +32,7 @@ const AppBarComponent = () => {
         <Typography variant="h6" className={classes.title}>
           Girls Who Code
         </Typography>
+        <Link to='/'> <HomeIcon/> </Link> 
         <a href='https://github.com/' rel="noopener noreferrer" target="_blank"> 
         <GitHubIcon/> 
         </a>

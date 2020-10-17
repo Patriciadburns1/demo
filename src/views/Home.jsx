@@ -11,8 +11,8 @@ const useStyles = makeStyles({
   imageContainer: {
     alignSelf: "center",
     height: "500px",
-    paddingRight: "112px",
-    paddingLeft: "112px",
+    paddingRight: "116px",
+    paddingLeft: "116px",
     paddingBottom: 0,
   },
   textContainer: {

@@ -30,7 +30,6 @@ const Example = () => {
           </div>
         );
       })}
-      <Link>  </Link>
     </Paper>
   );
 };
