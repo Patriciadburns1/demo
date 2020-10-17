@@ -36,7 +36,7 @@ const Home = () => {
           <Typography className={classes.text}>Welcome and Happy Coding!</Typography>
         </div>
         <div className={classes.imageContainer}>
-          <img src={GirlsWhoCode} alt="girls who code UVA" />
+          <img src={GirlsWhoCode} alt="girls who code UVA " />
         </div>
       </Paper>
     </div>

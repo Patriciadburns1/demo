@@ -1,22 +1,24 @@
-import { Route, Switch } from "react-router-dom";
+import {Route, Switch} from "react-router-dom";
 
-import About from './views/About';
+import About from "./views/About";
+import Example from './views/ApiCall'; 
 import AppBar from "./components/AppBar";
 import Home from "./views/Home";
 import React from "react";
-import Resources from "./views/Resources";
-import { makeStyles } from "@material-ui/core";
+import Resources from "./views/ApiCall";
+import {makeStyles} from "@material-ui/core";
 
 const useStyles = makeStyles({
   appContainer: {
     width: "100%",
     maxHeight: "100%",
-    overflowY: "auto",
+    overflowY: "auto"
   },
   mainContentContainer: {
     display: "flex",
     justifyContent: "center",
-  },
+    marginTop: "64px"
+  }
 });
 
 const Main = () => {
@@ -25,13 +27,13 @@ const Main = () => {
     <div className={classes.appContainer}>
       <AppBar />
       <div>
-        <Switch>
-          <div className={classes.mainContentContainer}>
+        <div className={classes.mainContentContainer}>
+          <Switch>
             <Route path="/" component={Home} exact />
-            <Route path="/Resources" component={Resources} />
+            <Route path="/Example" component={Example} />
             <Route path="/About" component={About} />
-          </div>
-        </Switch>
+          </Switch>
+        </div>
       </div>
     </div>
   );

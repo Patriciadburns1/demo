@@ -1,7 +1,6 @@
-import Divider from "@material-ui/core/Divider";
 import IconButton from "@material-ui/core/IconButton";
 import InboxIcon from "@material-ui/icons/MoveToInbox";
-import {Link} from 'react-router-dom'
+import {Link} from "react-router-dom";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemIcon from "@material-ui/core/ListItemIcon";
@@ -10,21 +9,21 @@ import MailIcon from "@material-ui/icons/Mail";
 import MenuIcon from "@material-ui/icons/Menu";
 import React from "react";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
   list: {
-    width: 250,
+    width: 250
   },
   fullList: {
-    width: "auto",
-  },
+    width: "auto"
+  }
 });
 
-export default function SwipeableTemporaryDrawer() {
+const SwipeableTemporaryDrawer = () => {
   const classes = useStyles();
   const [state, setState] = React.useState({
-    left: false,
+    left: false
   });
 
   const toggleDrawer = (anchor, open) => (event) => {
@@ -36,16 +35,16 @@ export default function SwipeableTemporaryDrawer() {
       return;
     }
 
-    setState({ ...state, left: open });
+    setState({...state, left: open});
   };
 
-  const list = (anchor) => (
+  const list = () => (
     <div>
-      <div style={{ marginTop: "50px" }}>
+      <div style={{marginTop: "50px"}}>
         <List>
-          {[ "About", "Resources"].map((text, index) => (
-            <Link to={`/${text}`}>
-              <ListItem  key={text}>
+          {["About", "Example"].map((text, index) => (
+            <Link to={`/${text}`} key={text}>
+              <ListItem>
                 <ListItemIcon>
                   {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
                 </ListItemIcon>
@@ -61,7 +60,7 @@ export default function SwipeableTemporaryDrawer() {
   return (
     <>
       <IconButton onClick={toggleDrawer("left", true)}>
-        <MenuIcon style={{color:'white'}}/>
+        <MenuIcon style={{color: "white"}} />
       </IconButton>
       <SwipeableDrawer
         anchor={"left"}
@@ -73,4 +72,6 @@ export default function SwipeableTemporaryDrawer() {
       </SwipeableDrawer>
     </>
   );
-}
+};
+
+export default SwipeableTemporaryDrawer;
