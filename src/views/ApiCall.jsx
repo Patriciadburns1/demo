@@ -9,16 +9,17 @@ const Example = () => {
 
   // example of an api call using axios this was npm installed
   // taken from https://www.programmableweb.com/category/humor/api
+  const fetchFriendsData = async () => {
+    try {
+      const quotes = await axios.get("https://friends-quotes-api.herokuapp.com/quotes");
+      setData(quotes.data);
+    } catch (error) {
+      console.log("error", error);
+    }
+  };
+
   React.useEffect(() => {
     ref.current = true;
-    const fetchFriendsData = async () => {
-      try {
-        const quotes = await axios.get("https://friends-quotes-api.herokuapp.com/quotes");
-        setData(quotes.data);
-      } catch (error) {
-        console.log("error", error);
-      }
-    };
     if (ref.current) {
       fetchFriendsData();
     }
